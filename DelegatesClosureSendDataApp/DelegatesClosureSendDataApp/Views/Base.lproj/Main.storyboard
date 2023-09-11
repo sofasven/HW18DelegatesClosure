@@ -171,6 +171,9 @@
                                         <rect key="frame" x="128.66666666666669" y="0.0" width="89.333333333333314" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="hexColorAction:" destination="3bW-yx-tXA" eventType="editingDidEnd" id="PN2-BK-iPf"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -258,6 +261,7 @@
                         <outlet property="colorView" destination="LiH-yc-8Sw" id="I7p-pN-WgG"/>
                         <outlet property="greenSlider" destination="Gzw-3A-8Ol" id="SFx-CU-o3H"/>
                         <outlet property="greenTF" destination="hkM-T0-sqY" id="6NW-xF-np0"/>
+                        <outlet property="hexColorTF" destination="bEf-3O-xoO" id="db6-Kj-7BP"/>
                         <outlet property="opacity" destination="Z5Z-wo-B43" id="rXy-Ec-4TL"/>
                         <outlet property="opacityTF" destination="RPi-xB-YtR" id="F0p-Cd-a19"/>
                         <outlet property="redSlider" destination="7gT-RP-6hq" id="Yn8-3L-PQh"/>

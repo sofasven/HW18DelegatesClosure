@@ -24,6 +24,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="goToChangeBGVC" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y8l-A6-5kc"/>
+                                    <segue destination="3bW-yx-tXA" kind="show" identifier="GoToChangeBG" id="2fQ-Fb-jyu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -36,9 +37,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EW5-0w-u2n"/>
-                    <connections>
-                        <outlet property="viewBG" destination="8bC-Xf-vdC" id="TeN-DJ-Lhi"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -53,7 +51,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="1rN-oo-TDh">
-                                <rect key="frame" x="25" y="129" width="343" height="216"/>
+                                <rect key="frame" x="25" y="173" width="343" height="216"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ib4-Iq-eRP">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="59.333333333333336"/>
@@ -99,7 +97,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="qge-qn-duR">
-                                                <rect key="frame" x="0.0" y="25.333333333333314" width="343" height="34"/>
+                                                <rect key="frame" x="0.0" y="25.333333333333343" width="343" height="34"/>
                                                 <subviews>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Gzw-3A-8Ol">
                                                         <rect key="frame" x="-2" y="0.0" width="254" height="35"/>
@@ -177,27 +175,6 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="fRp-is-jEl">
-                                <rect key="frame" x="109.00000000000001" y="677.33333333333337" width="175.33333333333337" height="90.666666666666629"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9U-ni-bLq">
-                                        <rect key="frame" x="0.0" y="0.0" width="175.33333333333334" height="34.333333333333336"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="tinted" title="DoneWithDelegates"/>
-                                        <connections>
-                                            <action selector="doneWithDelegates" destination="3bW-yx-tXA" eventType="touchUpInside" id="SIh-2s-e4p"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hK-y4-21w">
-                                        <rect key="frame" x="0.0" y="56.333333333333258" width="175.33333333333334" height="34.333333333333343"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="tinted" title="DoneWithClosure"/>
-                                        <connections>
-                                            <action selector="doneWithClosure" destination="3bW-yx-tXA" eventType="touchUpInside" id="NmY-KL-Ad5"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Qnx-8j-yz5">
                                 <rect key="frame" x="25" y="507.66666666666669" width="343" height="120.33333333333331"/>
                                 <subviews>
@@ -238,16 +215,25 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9U-ni-bLq">
+                                <rect key="frame" x="50" y="733.66666666666663" width="293" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Done"/>
+                                <connections>
+                                    <action selector="doneBtnAction" destination="3bW-yx-tXA" eventType="touchUpInside" id="SIh-2s-e4p"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yUr-E8-RIC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="yUr-E8-RIC" firstAttribute="bottom" secondItem="fRp-is-jEl" secondAttribute="bottom" constant="50" id="2cQ-Gg-oa4"/>
+                            <constraint firstItem="yUr-E8-RIC" firstAttribute="bottom" secondItem="C9U-ni-bLq" secondAttribute="bottom" constant="50" id="1JY-cz-eEY"/>
+                            <constraint firstItem="yUr-E8-RIC" firstAttribute="trailing" secondItem="C9U-ni-bLq" secondAttribute="trailing" constant="50" id="I9O-MW-HPf"/>
                             <constraint firstItem="1rN-oo-TDh" firstAttribute="top" secondItem="yUr-E8-RIC" secondAttribute="top" constant="70" id="Lsq-qo-iuo"/>
                             <constraint firstItem="yUr-E8-RIC" firstAttribute="trailing" secondItem="ZMx-Vo-ukr" secondAttribute="trailing" constant="25" id="VSe-0k-9rD"/>
                             <constraint firstItem="yUr-E8-RIC" firstAttribute="trailing" secondItem="1rN-oo-TDh" secondAttribute="trailing" constant="25" id="Z4N-5Y-3Tt"/>
-                            <constraint firstItem="fRp-is-jEl" firstAttribute="centerX" secondItem="yUr-E8-RIC" secondAttribute="centerX" id="gTS-2t-Nil"/>
                             <constraint firstItem="yUr-E8-RIC" firstAttribute="bottom" secondItem="Qnx-8j-yz5" secondAttribute="bottom" constant="190" id="h5j-yt-40b"/>
+                            <constraint firstItem="C9U-ni-bLq" firstAttribute="leading" secondItem="yUr-E8-RIC" secondAttribute="leading" constant="50" id="hl7-bJ-DaJ"/>
                             <constraint firstItem="Qnx-8j-yz5" firstAttribute="leading" secondItem="yUr-E8-RIC" secondAttribute="leading" constant="25" id="p0P-v6-H83"/>
                             <constraint firstItem="ZMx-Vo-ukr" firstAttribute="leading" secondItem="yUr-E8-RIC" secondAttribute="leading" constant="150" id="qIk-hf-J7m"/>
                             <constraint firstItem="1rN-oo-TDh" firstAttribute="leading" secondItem="yUr-E8-RIC" secondAttribute="leading" constant="25" id="rm0-X1-oOO"/>
@@ -255,10 +241,12 @@
                             <constraint firstItem="yUr-E8-RIC" firstAttribute="bottom" secondItem="ZMx-Vo-ukr" secondAttribute="bottom" constant="375" id="vJp-ed-tUp"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Jgx-3z-duP"/>
                     <connections>
                         <outlet property="blueSlider" destination="U7H-d1-MqK" id="ukP-F8-YYA"/>
                         <outlet property="blueTF" destination="OAU-NO-I9v" id="d67-ww-FRw"/>
                         <outlet property="colorView" destination="LiH-yc-8Sw" id="I7p-pN-WgG"/>
+                        <outlet property="doneBtnOutlet" destination="C9U-ni-bLq" id="Ea0-DG-IFx"/>
                         <outlet property="greenSlider" destination="Gzw-3A-8Ol" id="SFx-CU-o3H"/>
                         <outlet property="greenTF" destination="hkM-T0-sqY" id="6NW-xF-np0"/>
                         <outlet property="hexColorTF" destination="bEf-3O-xoO" id="db6-Kj-7BP"/>
